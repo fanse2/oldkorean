@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한노인회 미주총연합회</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Add favicon links -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Vue.js 3 CDN -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top navbar-transparent">
+            <div class="container-lg">
+                <a class="navbar-brand" href="#"><img src="img/logo.png" alt="대한노인회 미주총연합회"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">노인회 소개</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#news">노인회 소식</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="bg-primary text-white text-center">
+            <div id="headerCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="img/slide1.jpeg" class="d-block w-100" alt="Slide 1">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>새로 추대된 조광세 총회장</h2>
+                            <!-- <p>Slide 1 Description</p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide2.png" class="d-block w-100" alt="Slide 2">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>어른다운 노인으로</h2>
+                            <!-- <p>Slide 2 Description</p> -->
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/slide3.png" class="d-block w-100" alt="Slide 3">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h2>어른다운 노인으로</h2>
+                            <!-- <p>Slide 3 Description</p> -->
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#headerCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#headerCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </header>
+
+        <section id="about" class="">
+            <div class="container">
+                <h2>노인회 소개</h2>
+                 <div class="about-card">
+                    <h3>비전(VISION)</h3>
+                    <p>세대를 잇고 지속가능사회를 선도하는 대한노인회!</p>
+                 </div>
+                 <div class="about-card">
+                    <h3>5대 목표</h3>
+                    <ul>
+                        <li>노인의 권익과 복지 증진</li>
+                        <li>노인의 경제적 자립과 노후 삶의 질 향상</li>
+                        <li>세대 통합과 지속가능 성장을 위한 역할 강화</li>
+                        <li>노인이 존경받는 초고령사회 구현</li>
+                        <li>대한노인회의 투명하고 공정한 운영</li>
+                      </ul>
+                 </div>
+            </div>
+        </section>
+
+        <section id="news" class="">
+            <div class="container">
+                <h2>노인회 소식</h2>
+                 <div v-for="n in news" class="about-card" >
+                    <h3>{{n.title}}</h3>
+                    <p v-html="n.desc"></p>
+                 </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-light">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <form @submit.prevent="submitForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" v-model="form.name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="email" v-model="form.email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea class="form-control" id="message" rows="3" v-model="form.message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </section>
+
+        <footer class="bg-dark text-white text-center py-3" id="footer">
+            <p>&copy; {{year}} {{title}}</p>
+        </footer>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

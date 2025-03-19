@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Sunflower:wght@300&display=swap');
+
+:root {
+    --main-color: #00976a; /* Define main color variable */
+}
+
+*{
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+.navbar-brand img{
+    height: 35px;
+}
+
+/* Add styles for carousel captions */
+.carousel-caption {
+    top: 62%;
+    transform: translateY(-50%);
+    text-align: left;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add drop shadow */
+}
+
+.carousel-caption h2{
+    font-weight: bolder;
+}
+
+/* Add transparency and drop shadow to the navbar */
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+}
+
+.navbar-transparent {
+    opacity: 0.9; /* 0에서 1 사이의 값으로 투명도 조절 */
+}
+
+.container h2{
+    border-left: 5px solid var(--main-color); /* Use main color variable */
+    padding-left: 5px;
+    margin-bottom: 20px;
+}
+
+/* Add animation for carousel images */
+.carousel-item img {
+    transition: transform 5s linear;
+}
+
+.carousel-item.active img {
+    transform: scale(1.1);
+}
+
+/* Add padding to the top of the #about section */
+#about {
+    padding: 80px 0; /* Adjust this value based on the height of your navbar */
+}
+/* Add padding to the top of the #about section */
+#news {
+    padding: 80px 0; /* Adjust this value based on the height of your navbar */
+}
+
+.about-card{
+    border: silver  1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 10px 0;
+    background: linear-gradient(135deg, rgba(154, 255, 221, 0.075), rgba(161, 255, 227, 0)); /* Gradient background */
+}
+
+.about-card ul{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.about-card ul li::before {
+    content: "🔹"; /* Use emoji as bullet point */
+    margin-right: 10px;
+}

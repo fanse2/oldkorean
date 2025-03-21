@@ -72,5 +72,16 @@
 
 .about-card ul li::before {
     content: "🔹"; /* Use emoji as bullet point */
-    margin-right: 10px;
+}
+
+.navbar-nav .nav-link:hover {
+    border-bottom: 2px solid var(--main-color); /* Add green border on hover */
+}
+
+.navbar-nav .nav-link {
+    transition: transform 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-link:active {
+    transform: scale(1.1);
 }

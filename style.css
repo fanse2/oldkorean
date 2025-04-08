@@ -4,11 +4,11 @@
     --main-color: #00976a; /* Define main color variable */
 }
 
-*{
+* {
     font-family: 'Nanum Gothic', sans-serif;
 }
 
-.navbar-brand img{
+.navbar-brand img {
     height: 35px;
 }
 
@@ -20,7 +20,7 @@
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add drop shadow */
 }
 
-.carousel-caption h2{
+.carousel-caption h2 {
     font-weight: bolder;
 }
 
@@ -30,10 +30,10 @@
 }
 
 .navbar-transparent {
-    opacity: 0.9; /* 0에서 1 사이의 값으로 투명도 조절 */
+    opacity: 0.9; /* Adjust transparency */
 }
 
-.container h2{
+.container h2 {
     border-left: 5px solid var(--main-color); /* Use main color variable */
     padding-left: 5px;
     margin-bottom: 20px;
@@ -48,24 +48,35 @@
     transform: scale(1.1);
 }
 
-/* Add padding to the top of the #about section */
-#about {
-    padding: 80px 0; /* Adjust this value based on the height of your navbar */
-}
-/* Add padding to the top of the #about section */
-#news {
+/* Add padding to sections */
+#about, #news {
     padding: 80px 0; /* Adjust this value based on the height of your navbar */
 }
 
-.about-card{
-    border: silver  1px solid;
+.about-card {
     border-radius: 5px;
     padding: 15px;
-    margin: 10px 0;
-    background: linear-gradient(135deg, rgba(154, 255, 221, 0.075), rgba(161, 255, 227, 0)); /* Gradient background */
+    margin: 25px 0;
 }
 
-.about-card ul{
+.news-card {
+    border: silver 1px solid;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 25px 0;
+}
+
+.news-card button {
+    color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+.news-card button:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.about-card ul {
     list-style-type: none;
     padding-left: 0;
 }
@@ -84,4 +95,18 @@
 
 .navbar-nav .nav-link:active {
     transform: scale(1.1);
+}
+
+.vision-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.vision-background {
+    min-height: 350px;
+    background-image: url('img/future.jpg'); 
+    background-size: cover; 
+    background-position: center;
 }

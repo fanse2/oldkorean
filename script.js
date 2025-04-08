@@ -6,29 +6,29 @@ const footer = Vue.createApp({
             member: null,
         }
     },
-    // methods:{
-
-    // },
     mounted() {
         this.year = new Date().getFullYear()
     },
 })
 footer.mount('#footer')
 
-
-
-
 const news = Vue.createApp({
     data() {
         return {
             news: null,
+            expandedIndex: 0, // Set the first news card to be expanded by default
         }
     },
-    methods:{},
+    methods: {
+        toggleExpand(index) {
+            // Toggle the expanded state for the clicked news card
+            this.expandedIndex = this.expandedIndex === index ? null : index;
+        },
+    },
     mounted() {
         fetch('./data.json')
             .then(res => res.json())
-            .then(data=> this.news = data)
+            .then(data => this.news = data)
     },
 })
 news.mount('#news')

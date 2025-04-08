@@ -109,9 +109,19 @@
     gap: 20px;
 }
 
+@keyframes backgroundScaleAnimation {
+    0%, 100% {
+        background-size: 100%;
+    }
+    50% {
+        background-size: 110%;
+    }
+}
+
 .vision-background {
-    min-height: 350px;
+    min-height: 400px;
     background-image: url('img/future.jpg'); 
-    background-size: cover; 
+    background-size: 100%; /* Start with normal size */
     background-position: center;
+    animation: backgroundScaleAnimation 20s infinite; /* Apply scaling animation to the background */
 }
